@@ -1,0 +1,42 @@
+Install Virtual Box from official website and install it
+Download arch from official website
+Create a new vm inside the virtual box and create with arch linux 
+Add the iso file directly here when given the option to include the iso file during initial phase of creation
+After creation change the settings accordingly and then hit the start button to run the arch installer
+
+When started and opened run these commands in the said algorithm only:-
+a. Arch linux install medium(x86_64,BIOS) for easy iinstallation
+b. write command :- pacman -Sy (this cmd make the system update)
+c. check for if wifi is working or not :- ping -c 5 google.com
+d. Again do :- pacman -Sy(to check if its up to date or not)
+e. pacman -S archlinux-keyring (this cmd basically checks all the packages been installed correctly or not)
+f. pacman -S archinstall (this cmd makes it easy to install arch using the arch install script)
+g. Add Locales accordingly
+h. Add Mirror region accordingly
+i. Add Disk configuration automatically one as it will create all partitions accordingly
+j. Make Swap enabled
+k. Bootloader use Grub
+l. Hostname,root pass,user account :- create accordingly
+m. Profile :- Here for the simplicity i used Gnome,Hyprland doesnt work directly(checked but didnt worked)
+	You may checkout some yt videos which window manager suits your style the best
+n. Audio :- If you are working with audio,jacks and other connecting devices then use pipewire else you can use else
+o. Kernels :- Linux will be fine
+p. Network configuration :- use network manager
+q. Additional Packages :- git,fastfetch,htop
+r. Timezone :- set accordingly
+
+After all such main config click install
+After completion go in chroot post install configuration
+Write :- pacman -Sy
+Install major apps :- pacman -S firefox vlc gcc wget curl git flatpak (all apps you want...)
+Now write :- exit
+Then write :- shutdown now 
+
+Then start the VM again after getting inside :- open console 
+Write cmd :-  pacman -Syyu
+Write cmd :- sudo pacman -S base-devel linux-headers
+
+YEH! CONGRATS FINALLY INSTALLED ARCH linux distro succesfully!
+
+Now Work on it like a real pro and customise it,play with it and create something foer which you have done this much labour.
+ALL THE BEST!!

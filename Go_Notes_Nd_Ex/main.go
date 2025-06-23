@@ -163,5 +163,100 @@ func main(){
 	// fmt.Println(c)
 	// const d=3.2*b//this will not throw any error as we are assigning untyped constant to typed constant
 	// fmt.Println("Constant d:", d) //this will print Constant d: 64
+	
+	/*Iota :- predefined identifier represents successive untyped int constants
+	Its val is index of respective ConstSpec in that const declaration starting at 0,
+	Can be used to construct a set of related constants*/
+	// //example
+	// const (
+	// c1=iota
+	// c2=iota
+	// c3=iota
+	// )
+	// fmt.Println(c1,c2,c3) //Prints 0,1,2
+	// const (
+	// 	c5=iota
+	// 	c6
+	// 	c7
+	// )
+	// fmt.Println(c5,c6,c7)
+	// //to get iota with 2 step
+	// const (
+	// 	c5=iota*2
+	// 	c6
+	// 	c7
+	// )
+	// fmt.Println(c5,c6,c7)
+	// //to skip some val
+	// const (
+	// 	c5=iota*2
+	// 	_ //to skip one val 
+	// 	c6
+	// 	c7
+	// )
+	// fmt.Println(c5,c6,c7)
+
+	//Data Types :-  golang doesnt have char data type 
+	/*1 Predeclared 
+	int8,16,32,64 for signed int ,uint8,16,32,64 for unsigned int
+	float32,64 : 0 before decimal pt can be ommitted
+	complex64,128 
+	byte : alias for unit8 
+	rune :alias for int32
+	bool :true or false 
+	string :enclosed by ""
+	*/
+	// //Ex
+	// var r rune ='f'
+	// fmt.Printf("%T",r) //Print it as int32
+	// fmt.Println(r) //Print dec ASCII value code for 'f'
+
+	/*2 Composite Types
+	array/slice :- numbered seq of elements of single type,array has fixed length but slice has dynamic length
+	len is builtin funct to find length of an array
+	map : unordered grp of eleements of one type,indexed by set of unique keys of another type,mP IN GO SIMILr to dict in python
+	*/
+	////Ex
+	// var r=[4]int{1,2,-3,4}//array
+	// fmt.Println(r)
+	// var t=[]int{1,2,3,4,6}//slice
+	// fmt.Println(t)
+
+	// bal:=map[string]float64{ //map example
+	// 	"d":2.2,
+	// 	"e":3.2, //NOTE: , is necessary even after the last val
+	// }
+	// fmt.Println(bal)
+
+	/*User DEfined type
+	Struct Type : seq od named elements,called fields each of which has name and type,
+	can be compared to class object in OOP
+	Ex:	*/
+	// type Car struct{
+	// 	brand string
+	// 	price int
+	// }
+	// var t Car
+	// t.brand="wd"
+	// t.price=32
+	// fmt.Println(t)	
+
+	/*
+	Pointer data type : ptr is var that stores memory add of another var 
+	val of an uninitalised ptr is nil
+	Unlike C go has no ptr arithematic */
+	// var x int =2
+	// ptr :=&x
+	// fmt.Printf("The type is %T and the val is %v as address real val will be %d",ptr, ptr,*ptr)
+
+	//Function data type 
+	fmt.Printf("%T",ff)
+/*Interfaces and function type
+Channel type : provides mechanism for concurrently executing functions to communicate by sending and receiving values of specied element type*/
+
+//GO Operators 
 
 }
+func ff(){
+	//for understanding function data type
+	}

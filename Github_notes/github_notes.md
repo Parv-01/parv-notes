@@ -309,3 +309,12 @@ Here are some frequent issues users encounter when working with Git and GitHub, 
 **Description**: A merge conflict happens when Git cannot automatically combine changes from two different branches (or when pulling from a remote) because the same lines of code (or the same file structure) have been modified differently in both branches.
 
 **How it looks**: Git will stop the merge process and mark the conflicting files. Your code editor will show special "conflict markers":
+
+
+Sometimes even after commit,add files using git command the psuh doesnt seem to work and will say Everything upto date 
+then in these moments change some file inside and then again do git status,git add . , git commit -m 
+Sometimes(in my case) it maybe because you have not set up your global user name and email but setup the git push token so setup it first and then commit and push it will work 
+or sometimes it maybe because after committing you have deleted something and then did git add . but didnt commit so it still shows git status green but will not work with git push 
+so do git commit and then git push 
+
+ALso if not then recheck once your branch,repo name,profile name using git remote -v,also check your local branch name git branch -vv

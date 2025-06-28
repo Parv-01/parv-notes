@@ -1,0 +1,10 @@
+insert mode :- Press i to start typing
+Normal Mode :- PRess Esc to exit insert Mode
+Save and Exit :- :wq and press ENTER
+Quit without saving :- :q! and press ENTER
+Move to start of line :- O
+Move to end of line :- $
+Delete line :- type dd
+Undo :- u
+redo :- Ctrl+r
+

@@ -10,11 +10,16 @@
 // Variables and Declarations
 package main
 
+//to deal with very very large numbers use math/big :- it implements arbitrary-precision arithmetic(big no)
+//foolwing are supported :-  Int -> signed int , Rat -> rational no,Float -> floating point no ;zzero val is 0 for all 3
+
 import (
 	"fmt"
+	//"math"
 )
 func main(){
 	fmt.Println("Hallo Parv,Ich lebe in India!!")
+
 	// //2 ways to declare var
 	// //1 type :- var name type = value | keyword identifier type = value
 	// var name string = "Parv"
@@ -250,13 +255,100 @@ func main(){
 	// fmt.Printf("The type is %T and the val is %v as address real val will be %d",ptr, ptr,*ptr)
 
 	//Function data type 
-	fmt.Printf("%T",ff)
+	//fmt.Printf("%T",ff)
 /*Interfaces and function type
 Channel type : provides mechanism for concurrently executing functions to communicate by sending and receiving values of specied element type*/
 
-//GO Operators 
+////GO Operators :-
+// a:=11
+// b:=14
+// // operator :- symbol of prog lang which able to operate on values 
+// // Types :- Arithmetic & Bitwise,Assignment,Inc & Dec statements,Comparison,Logical,pointer(&) & channels(<-)
+// // Arithmetic :-
+// fmt.Println(a+b)//addition
+// fmt.Println(b-a)//subtraction
+// fmt.Println(a*b)//multiplication
+// fmt.Println(a/b)//division
+// fmt.Println(a%b)//modulus or mod only apply on int 
+
+// //Assignment operators :- 
+// fmt.Println(a,b); //original values
+// a+=2 //increement assignment
+// fmt.Println(a,b);
+// b-=1 //decreement assignment
+// fmt.Println(a,b);
+// a*=3 //multiplication assignment
+// fmt.Println(a,b);
+// b/=2 //division assignment
+// fmt.Println(a,b);
+// a%=b //mod assignment :- only remainder will be returned
+// fmt.Println(a,b);
+// /**Inc and dec statements :-  in golang they're statements not var like in cpp/java/python**/
+// //fmt.Println(1+a--) //will print an error as ++ is statement not operator in golang
+// a++
+// b--
+// fmt.Println(a,b);
+
+// //Comparison operators: compare 2 operands and return bool val
+// fmt.Println(a==b)	//equal
+// fmt.Println(a>b)	//greater
+// fmt.Println(a<b)	//smaller
+// fmt.Println(a!=b)	//not equal
+// fmt.Println(a>=b)	//greater or equal
+// fmt.Println(a<=b)	//smaller or equal
+
+// //Logical Operators :- apply to bool val and return bool vals
+// fmt.Println(a>1 && b<0) //logical and 
+// fmt.Println(a>1 || b<0) //logical or
+// fmt.Println(!(a>1 || b<0)) //negate or not
+
+// /*Overflow and underflow :-  if the bits of result goes beyond the resultant data type then higher bits or overflown bits values are discarded like in c/cpp
+// Condition known as overflowing*/
+// var x uint8=255 //max val of uint8
+// x++
+// fmt.Println(x)//x returns 0 val as its overflow and it'll not give runtime panick
+
+// //go only catches error of overflow if the var is compiled at compile time 
+// //Ex
+// x:=int8(255)
+// x++
+// fmt.Println(x)//will catch the overflow error in compile time only
+// f:=float32(math.MaxFloat32)
+// fmt.Println(f)//will not give any error and overflows to infinity example :- 
+// f*=2.35
+// fmt.Println(f)//will print +inf 
+
+// const i int8 =300 //it'll throw compilen time error 
+
+////Converting Types
+converting_types()
 
 }
-func ff(){
-	//for understanding function data type
-	}
+// func ff(){
+// 	//for understanding function data type
+// 	}
+
+func converting_types(){
+// //in golang we call casting type to converting type 
+// x:=3 //int
+// y:=4.33 //float
+// //x*=y //throw compile type error due to golang being strongly typed lan which not allow int to * directly with float 
+// x*=int(y)
+// fmt.Println(x,y)
+// fmt.Printf("%T %T\n",x,y)
+// y=y*float64(x)
+// fmt.Println(x,y)
+// fmt.Printf("%T %T",x,y)
+
+// //We cant assign var of different types except aliases type 
+// var a =5 //int type
+// fmt.Printf("%T\n",a)
+// var b int64=6
+// //a=b //error as both int and int64 is different even with same max and min
+// a=int(b)//solution of the problem above
+// fmt.Println(a,b)
+
+//// Converting no to string and string to no 
+
+
+}

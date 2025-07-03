@@ -15,6 +15,7 @@ package main
 
 import (
 	"fmt"
+	//"strconv" // to convert string to int,float
 	//"math"
 )
 func main(){
@@ -321,34 +322,73 @@ Channel type : provides mechanism for concurrently executing functions to commun
 // const i int8 =300 //it'll throw compilen time error 
 
 ////Converting Types
-converting_types()
+//converting_types()
 
+/*Defined types: also called named type :- new type created by coder from another existing type which is called underlying/source type
+ New defined type must have new name and can have its new methods 
+ Underlying type provides representation,operations and size of newly defined type
+ Even if both user and source type share same representation,operations and size theyre different types
+ New type is not just alias for existing typw its completely new type
+ Theres no type-hierarchy in Golang
+*/
+defined_type()
 }
 // func ff(){
 // 	//for understanding function data type
 // 	}
 
-func converting_types(){
-// //in golang we call casting type to converting type 
-// x:=3 //int
-// y:=4.33 //float
-// //x*=y //throw compile type error due to golang being strongly typed lan which not allow int to * directly with float 
-// x*=int(y)
-// fmt.Println(x,y)
-// fmt.Printf("%T %T\n",x,y)
-// y=y*float64(x)
-// fmt.Println(x,y)
-// fmt.Printf("%T %T",x,y)
+// func converting_types(){
+// // //in golang we call casting type to converting type 
+// // x:=3 //int
+// // y:=4.33 //float
+// // //x*=y //throw compile type error due to golang being strongly typed lan which not allow int to * directly with float 
+// // x*=int(y)
+// // fmt.Println(x,y)
+// // fmt.Printf("%T %T\n",x,y)
+// // y=y*float64(x)
+// // fmt.Println(x,y)
+// // fmt.Printf("%T %T",x,y)
+//
+// // //We cant assign var of different types except aliases type 
+// // var a =5 //int type
+// // fmt.Printf("%T\n",a)
+// // var b int64=6
+// // //a=b //error as both int and int64 is different even with same max and min
+// // a=int(b)//solution of the problem above
+// // fmt.Println(a,b)
+//
+// //// Converting no to string and string to no 
+// // s:= string(99)
+// // fmt.Println(s) //results in warning as sometimes with val over ascii code can result in errors
+// // var mt=fmt.Sprintf("%f",44.2)
+// // fmt.Println(mt)
+// // var ms=fmt.Sprintf("%d",34)
+// // fmt.Println(ms)
+// // fmt.Println(string(23))//results in warning as sometimes with val over ascii code can result in errors
+// //// Also cant convert float no using string()
+// //// The other and newer way to convert int,float to string is 
+// // s1:=strconv.Itoa(32) //for int to string 
+// // fmt.Println(s1)
+// // s2 := strconv.FormatFloat(44.3,'f',2,64) //Formatfloat(f float64,fmt byte,prec int,bitsize int)
+// // //// 'f' for fixed point notation,2 for 2 decimal places.64 for float64
+// // fmt.Println(s2)
+// // fmt.Printf("Type:- %T %T \n",s1,s2)
+// // fmt.Println("Test run")
+//
+// // To convert string to int or float 
+// // s1:="3.221"
+// // s2:="32"
+// // var f2,err2=strconv.Atoi(s2)//We cant use float inside this fucntion to directly
+// // // convert float strign val to int
+// // _=err2
+// // fmt.Println(f2)
+// // fmt.Printf("%T \n",f2)
+// // var f1,err=strconv.ParseFloat(s1,64)
+// // _ =err
+// // fmt.Println(f1)
+// // fmt.Printf("%T \n",f1)
+// }
 
-// //We cant assign var of different types except aliases type 
-// var a =5 //int type
-// fmt.Printf("%T\n",a)
-// var b int64=6
-// //a=b //error as both int and int64 is different even with same max and min
-// a=int(b)//solution of the problem above
-// fmt.Println(a,b)
-
-//// Converting no to string and string to no 
-
+func defined_type(){
 
 }

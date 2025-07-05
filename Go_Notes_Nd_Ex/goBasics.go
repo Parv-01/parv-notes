@@ -24,9 +24,9 @@ import (
 // type mile float64
 
 func main() {
-	fmt.Println("Hallo Parv,Ich lebe in India!!")
+	fmt.Println("Hallo,Ich Bin Parv!Ich lebe in India!!")
 
-	//VAriable Declaration and Naming classsifications and best Practices
+	//Variable Declaration and Naming classsifications and best Practices
 	//varrrs()
 
 	// //FMT Package :- std library for formatting and printing

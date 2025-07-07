@@ -1,12 +1,13 @@
 package main
 
-import(
+import (
 	"fmt"
-	"os"
+	//"os"
+	"strconv"
 )
 
 func main(){
-
+	fmt.Println("Ich leibst koding.")
 	//If Else and else if conditions
 	//ifElse()
 
@@ -14,7 +15,10 @@ func main(){
 	//cmdlinearg()
 
 	//Simple If or short way of writing if statements
-	simpleIf()
+	// simpleIf()
+
+	//For Loop and loops
+	forLoop()
 }
 
 // func ifElse(){
@@ -57,6 +61,23 @@ func main(){
 // 	//fmt.Printf("%T",os.Args)
 // }
 
-func simpleIf(){
-	
+// func simpleIf(){
+// 	//Short statements for if in golang
+// 	if i,err:= strconv.Atoi("44");err==nil{ //First statement is innitialisation statement for local var,2 part is boolean statement
+// 		fmt.Println("No error i is ",i)
+// 	}else{
+// 		fmt.Println("ERROR!! ",err)
+// 	}
+//
+// 	//This complete above code behaves same as :- 
+// 	/* i,err := strconv.Atoi("44")
+// 	if err!=nil{
+// 	fmt.Println("NO error ",i)}
+// 	else{
+// 	fmt.Println("ERROR!!! ",err)}
+// 	*/
+// }
+
+func forLoop(){
+
 }

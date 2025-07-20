@@ -1,6 +1,6 @@
 package main
 
-import (
+import ( //FILE SCOPE
 	"fmt"
 )
 import f "fmt" //permitted and used to learn about scopes 

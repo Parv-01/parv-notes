@@ -1,4 +1,4 @@
-package main
+package codeChallenge
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 /*for Ex4 */
 //var version = "3.1" //will not provide error as error not allowed on package scope
 
-func main() {
+func ChallBasics() {
 	fmt.Println("First Go challenger solutions")
 	/*Ex1 */
 	// var a int

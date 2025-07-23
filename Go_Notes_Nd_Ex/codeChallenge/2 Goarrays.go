@@ -1,8 +1,9 @@
-package main
+package codeChallenge
 import(
 	"fmt"
 )
-func main(){
+func ChallArrays(){
+	fmt.Println("Go Arrays challenge")
 	/*Exercise 1*/
 	// fmt.Println("Challenge for Arrays in Golang!")
 	// var cities = [2]string{}

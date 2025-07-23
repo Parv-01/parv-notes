@@ -1,10 +1,10 @@
-package main
+package codeChallenge
 
 import (
 	"fmt"
 	//"time"//for ex5
 )
-func main() {
+func ChallFlow() {
 	fmt.Println("Example Test for go flow operations")
 
 	/*Exercise 1 & 2 */

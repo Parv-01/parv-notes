@@ -14,10 +14,10 @@ func main() {
 	/*Go Arrays*/
 	// GoArrays()
 	/*Go Slices*/
-	GoSlices()
+	// GoSlices()
 
 	/*Challenge Exercises*/
-	// Challenges()
+	Challenges()
 }
 func Challenges(){
 	/*Challenge 1*/
@@ -25,7 +25,7 @@ func Challenges(){
 	/*Challenge 2*/
 	// codeChallenge.ChallFlow()
 	/*Challenge 3*/
-	codeChallenge.ChallArrays()
+	// codeChallenge.ChallArrays()
 	/*Challenge 4*/
-
+	codeChallenge.ChallSlices()
 }

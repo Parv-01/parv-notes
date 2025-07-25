@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	//"unsafe" //Used for finding the size of arrays and slices
 )
 
 func GoSlices() {
@@ -13,8 +14,13 @@ func GoSlices() {
 	/*Slice Comparison*/
 	//compareSlices()
 	/*Copying Slices*/
-	copySlice()
-
+	// copyAppendSlice()
+	/*Slice Expression*/
+	// sliceExpression()
+	/*Slice Backing(underlying) Array*/
+	// sliceBacking()
+	/*Append Length and Capacity in Depth*/
+	// appendfunc()
 }
 
 /*Differrence between arrays and slices*/
@@ -113,6 +119,111 @@ func GoSlices() {
 // 	}
 // }
 
-func copySlice() {
+// func copyAppendSlice() {
+// 	nums:=[]int{2,3}
+// 	//append doesnt modify initial slice but returns a new slice 
+// 	nums= append(nums,10)
+// 	fmt.Println(nums)
+// 	//append function can append more values at once to slice in last 
+// 	nums =append(nums,23,45,55)
+// 	fmt.Println(nums)
+// 	//We can append other slice in other slice 
+// 	n:=[]int{0,0,0}
+// 	nums=append(nums,n...) //will append the whole n slice to nums in last 
+// 	fmt.Println(nums)
+// 	//copy function copies elements of one slice to another 
+// 	//If the slices have different length then minimum of length of slices 
+// 	src:=[]int{10,20,30}
+// 	dst:=make([]int,len(src))
+// 	nn:=copy(dst,src)
+// 	fmt.Println(src,dst,nn)	
+// 	dst=make([]int,2)
+// 	nn=copy(dst,src)
+// 	fmt.Println(src,dst,nn)	
+// 	//Note:=copy function not always copy elements if nothing is present then nothing is copied 
+// 	dst=make([]int,0)
+// 	nn=copy(dst,src)
+// 	fmt.Println(src,dst,nn)
+// }
 
-}
+// func sliceExpression(){
+// 	a:=[5]int{1,2,3,4,5}
+// 	//a[start:stop] -> will return element from start index to excluding stop index 
+// 	b:=a[0:3]///will return 1,2,3 ->slicing an array return slice 
+// 	fmt.Printf("%v, %T\n",b,b)
+// 	//Mising start says 0 and stop by len(slice)
+// 	b=a[:2]
+// 	fmt.Println(b)
+// 	b=a[2:]
+// 	fmt.Println(b)
+// 	b=a[:]//new slice equal to a
+// 	fmt.Println(b)
+// 	b=append(a[:3],100)
+// 	fmt.Println(b)
+// 	b=append(a[:3],200)//It pverwrites the last element from 100 to 200
+// 	fmt.Println(b)
+// }
+
+// func sliceBacking(){
+// 	/*Behind creating slice go creates array called Backing Array,
+// 	Backing array stores elements not slice 
+// 	Go implements slice as data structure called slice header
+// 	Slice header contains 3 fields :- 
+// 	1)address of backing array(ptr)
+// 	2)length of slice -> len() returns it
+// 	3)capacity of slice -> cap() returns it
+// 	Slice header is runtime representation of slice 
+// 	NOTE:- nil slice doesnt have backing array(all fiels of slice header 0)
+// 	The slice expression doesnt create new backing array 
+// 	*/
+// 	// s1:=[]int{10,20,30,40,50}
+// 	// s3,s4:=s1[0:2],s1[1:3]
+// 	// s3[1]=600 //The baking array of s1,s3,s4 is changed as well
+// 	// fmt.Println(s1,s3,s4)
+// 	// arr:=[4]int{10,20,30,40}//array
+// 	// slice1,slice2:=arr[0:2],arr[1:3]
+// 	// arr[1]=300 //Modifying array also modify slices 
+// 	// fmt.Println(arr,slice1,slice2)
+// 	// //To create a complete new slice from existing use append 
+// 	// s2:=[]int{}
+// 	// s2=append(s2,s1[0:2]...)//Remember ... else it will create error
+// 	// s1[0]=200//This doesnt modify new slice as both have different backing array
+// 	// fmt.Println(s1,s2)
+// 	// s5:=s1[0:3]
+// 	// fmt.Println(len(s5),cap(s5))//Capacity will be of s1 and length will be of s5 as both have same backing array
+// 	// s5=s1[2:]//The cap will be changes as in backing array the address of backing array(ptr) is the address of 1 element of slice
+// 	// fmt.Println(len(s5),cap(s5))
+// 	// //Slicing operations are cheaper then arrays as they have same backing arrays 
+// 	// fmt.Printf("%p %p %p\n",&s1,&s3,&s2)
+// 	// s5[0]=20000
+// 	// fmt.Println(s5,s1)//due to same backing array the element change in s5 will also be reflected in s1
+// 	// a:=[5]int{1,2,3,4,5}
+// 	// s:=[]int{1,2,3,4,5}
+// 	// fmt.Printf("Arrays size in bytes %d \n",unsafe.Sizeof(a))
+// 	// fmt.Printf("slices size in bytes %d \n",unsafe.Sizeof(s))//slices takees less memory than arrays 
+// }
+
+// func appendfunc(){
+// 	// var nums []int
+// 	// fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",nums,len(nums),cap(nums))
+// 	// nums=append(nums,1,2)
+// 	// /*Capacity of slice(0) is length of backing arrays and length of arrays fixed in golang 
+// 	// Remember elements of slice stores in backing arrays and not slices 
+// 	// So when slice capacity is full it makes new backing array*/
+// 	// fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",nums,len(nums),cap(nums))
+// 	// /*If we add more inside this then it will create one more new backing array*/
+// 	// nums=append(nums,3)
+// 	// fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",nums,len(nums),cap(nums))//it adds 1 extra for future append
+// 	// nums=append(nums,4)
+// 	// fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",nums,len(nums),cap(nums))//this time it didnt create new backing array 
+// 	// nums=append(nums,5)
+// 	// fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",nums,len(nums),cap(nums))//but this increase the backing arrays capacity exponentially
+// 	//
+// 	letters := []string{"a","b","c","d","e","f"}
+// 	letters=append(letters[0:1],"x","y")
+// 	fmt.Printf("val: %#v, Length: %d,Capacity: %d\n",letters,len(letters),cap(letters))//still the same backing array of previous letters
+// 	/*ERROR!!!!!!*/
+// 	// //fmt.Println(letters[4])//cant access after its length been append so give error
+// 	//but this will work using slice because slices see the whole backing arrays
+// 	fmt.Println(letters[3:6])
+// }
